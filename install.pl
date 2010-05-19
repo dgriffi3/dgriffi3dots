@@ -40,6 +40,7 @@ my %links = (
     commonsh => '.commonsh',
     inputrc => '.inputrc',
     xmodmap => '.xmodmap',
+    xmonad => '.xmonad',
     zsh => '.zsh',
     zshrc => '.zshrc',
     );
