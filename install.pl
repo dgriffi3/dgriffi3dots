@@ -37,6 +37,7 @@ unless(eval {symlink('', ''); 1;}) {
 }
 
 my %links = (
+    inputrc => '.inputrc',
     xmodmap => '.xmodmap',
     );
 
