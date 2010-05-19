@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-xmodmap ~/.modmap
+xmodmap ~/.xmodmap
 exec ck-launch-session xmonad
