@@ -1,18 +1,15 @@
 Config { font = "-*-terminus-*-r-*-*-12-*-*-*-*-*-*-*"
        , bgColor = "black"
        , fgColor = "#CCCCCC"
-       , position = TopW L 99
+       , position = BottomW L 100
        , lowerOnStart = True
        , commands = [ Run Weather "KCMI" ["-t","<tempF>F <skyCondition>", "-H", "78", "-L", "45", "-h", "#CC0000", "-l", "#3465A4", "-n", "#8AE234"] 6000
-                    , Run Network "wlan0" ["-L","0","-H","100","--normal","#8AE234","--high","#CC0000"] 10
-                    , Run Cpu ["-L","3","-H","50","--normal","#8AE234","--high","#CC0000"] 10
+                    , Run MultiCpu ["-L","3","-H","50","--normal","#8AE234","--high","#CC0000"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Swap [] 10
-                    , Run Com "uname" ["-n"] "" 36000
-                    , Run Date "%a %b %_d %Y | %R | " "date" 10
-                    , Run StdinReader
+                    , Run Date "%a %b %_d %Y %R" "date" 30
+		    , Run Battery [] 120
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{%cpu% | %memory% | %swap% |  %wlan0%      %KCMI%  <fc=#C4A000>%date%</fc>"
+       , template = "%date% %multicpu% %memory% %battery% %KCMI%"
        }
