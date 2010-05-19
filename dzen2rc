@@ -1,0 +1,55 @@
+#!/usr/bin/env zsh
+INTERVAL=5
+FDATE_INTERVAL=1
+FCPU_INTERVAL=1
+FMEM_INTERVAL=1
+FBATT_INTERVAL=10
+DATE_FORMAT='%a %b %d %H:%M'
+
+fdate() { date +$DATE_FORMAT }
+
+fbatt() {
+   acpi|sed -e 's/.*ing, //' -e 's/.*, \([[:digit:]]*\)\%.*/\1/' -e 's/.*charged, //'
+}
+
+fcpu() {
+   gcpubar -c 2 -i 0.1 | tail -n 1 | sed -e 's/CPU:\s*\([[:digit:]]*\).*/\1/'
+}
+
+fmem() {
+   FREEMEM="$(free | grep 'cache:' | sed -e 's/.*cache:\s*\([[:digit:]]*\).*/\1/')"
+   TOTALMEM="$(free | grep 'Mem:' | sed -e 's/Mem:\s*\([[:digit:]]*\).*/\1/')"
+   printf "%d" $(($FREEMEM./$TOTALMEM*100))
+}
+
+if [[ -z "$1" ]]; then
+   $0 --really-go | dzen2 -ta l -y 887 -h 13 -bg black
+else
+   FDATE_COUNTER=0;      FCPU_COUNTER=0;     FMEM_COUNTER=0;     FBATT_COUNTER=0;
+   FDATE_VAL="$(fdate)"; FCPU_VAL="$(fcpu)"; FMEM_VAL="$(fmem)"; FBATT_VAL="$(fbatt)";
+   while true; do
+      if [[ $FDATE_COUNTER -ge $FDATE_INTERVAL ]]; then
+         FDATE_VAL="$(fdate)"
+      fi
+
+      if [[ $FCPU_COUNTER -ge $FCPU_INTERVAL ]]; then
+         FCPU_VAL="$(fcpu)"
+      fi
+
+      if [[ $FMEM_COUNTER -ge $FMEM_INTERVAL ]]; then
+         FMEM_VAL="$(fmem)"
+      fi
+
+      if [[ $FBATT_COUNTER -ge $FBATT_INTERVAL ]]; then
+         FBATT_VAL="$(fbatt)"
+      fi
+
+      print "$FDATE_VAL CPU: $FCPU_VAL% M: $FMEM_VAL% Batt: $FBATT_VAL%"
+
+      FDATE_COUNTER=$(($FDATE_COUNTER + 1));
+      FCPU_COUNTER=$(($FCPU_COUNTER + 1));
+      FMEM_COUNTER=$(($FMEM_COUNTER + 1));
+      FBATT_COUNTER=$(($FBATT_COUNTER + 1));
+      sleep $INTERVAL
+   done
+fi
