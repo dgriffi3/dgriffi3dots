@@ -39,7 +39,7 @@ unless(eval {symlink('', ''); 1;}) {
 my %links = (
     commonsh => '.commonsh',
     inputrc => '.inputrc',
-    xsession => '.xinitrc',
+    xinitrc => '.xinitrc',
     xsession => '.xsession',
     xmodmap => '.xmodmap',
     xmonad => '.xmonad',
