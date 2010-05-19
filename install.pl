@@ -37,8 +37,11 @@ unless(eval {symlink('', ''); 1;}) {
 }
 
 my %links = (
+    commonsh => '.commonsh',
     inputrc => '.inputrc',
     xmodmap => '.xmodmap',
+    zsh => '.zsh',
+    zshrc => '.zshrc',
     );
 
 my $i = 0; # Keep track of how many links we added
