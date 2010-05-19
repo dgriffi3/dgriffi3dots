@@ -1,0 +1,34 @@
+Config { font = "-*-terminus-*-r-*-*-12-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "#CCCCCC"
+       , position = TopW L 99
+       , lowerOnStart = True
+       , commands = [ Run Weather "KCMI" ["-t","<tempF>F <skyCondition>", "-H", "78", "-L", "45", "-h", "#CC0000", "-l", "#3465A4", "-n", "#8AE234"] 6000
+                    , Run Network "wlan0" ["-L","0","-H","100","--normal","#8AE234","--high","#CC0000"] 10
+                    , Run Cpu ["-L","3","-H","50","--normal","#8AE234","--high","#CC0000"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Com "uname" ["-n"] "" 36000
+                    , Run Date "%a %b %_d %Y | %r | " "date" 10
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{%cpu% | %memory% | %swap% |  %wlan0%      %KCMI%  <fc=#C4A000>%date%</fc>"
+       }
+
+
+---        , position = TopW L 95
+---        , lowerOnStart = True
+---        , commands = [ Run Network "eth0" ["-L","0","-H","32","--normal","#8AE234","--high","#CC0000"] 10
+---                     , Run Cpu ["-L","3","-H","50","--normal","#8AE234","--high","#CC0000"] 10
+---                     , Run Memory ["-t","Mem: <usedratio>%"] 10
+---                     , Run Swap [] 10
+---                     , Run Com "uname" ["-s","-r"] "" 36000
+---                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+---                     , Run StdinReader
+---                     ]
+---        , sepChar = "%"
+---        , alignSep = "}{"
+---        , template = "%StdinReader% | %cpu% | %memory% * %swap% | %eth0% }{ <fc=#ee9a00>%date%</fc> | %uname%"
+---        }

@@ -41,6 +41,7 @@ my %links = (
     inputrc => '.inputrc',
     xinitrc => '.xinitrc',
     xsession => '.xsession',
+    xmobarrc => '.xmobarrc',
     xmodmap => '.xmodmap',
     xmonad => '.xmonad',
     zsh => '.zsh',
