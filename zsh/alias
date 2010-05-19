@@ -1,0 +1,67 @@
+alias cp='nocorrect cp'
+alias mv='nocorrect mv'
+alias rm='nocorrect rm -ir'
+alias mkdir='nocorrect mkdir'
+alias :q='exit'
+alias :wq='exit'
+
+alias df='df -h'
+alias du='du -h'
+alias pstree='pstree -h'
+
+alias a="ls "
+alias aa="ls -a "
+alias al="ls -l"
+alias aal="ls -al"
+alias ala="ls -al"
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -al"
+alias lal="ls -al"
+
+alias c="cd "
+alias c..="cd .."
+
+alias h="htop"
+alias ef="ps -ef"
+alias dus="du -sc ./*"
+
+alias emacsd="command emacs --daemon"
+alias emacs="emacsclient -c "
+alias temacs="emacsclient -c -nw"
+alias semacs="sudo emacs -nw"
+
+alias rlwrap="rlwrap -a -pcyan"
+
+alias rsync="rsync -azh --progress --inplace -e ssh"
+alias resource="source ~/.zshrc"
+alias wget="wget -c "
+alias clear-hist="echo "" > ~/.zsh/.history"
+
+alias ocaml="rlwrap ocaml"
+alias bc="rlwrap -S \"bc: \" bc -l"
+###alias ghci="rlwrap ghci"
+
+alias grep="grep -d skip --color=auto -n"
+
+
+# wget current directory, where all downloads are in a .wget file
+alias wga="wget -c -i .wget"
+
+alias wpa="sudo ~/bin/wpa"
+
+# My specific directory navigation/global aliases
+alias -g dnd="/home/ilseman2/Dnd/"
+alias -g sd="/home/ilseman2/Documents/my_dnd/char/sd/"
+alias -g mop="/home/ilseman2/FSL/projects/MOP/trunk/"
+
+
+# My program shortcuts
+alias drago="wine ~/.wine/drive_c/Program\ Files/Drago/Drago.exe"
+
+
+# Arch-specific aliases
+alias pacs="sudo pacman -S"
+alias pacr="sudo pacman -R"
+alias bbs="sudo bauerbill -S --aur"
+

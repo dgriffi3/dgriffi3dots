@@ -1,0 +1,12 @@
+# Turn off input related bells
+set bell-style none
+
+# Show possible matches after one ^I
+set show-all-if-ambiguous on
+
+# This sets vi editing mode for most readline programs
+# many (all?) irc clients ignore this
+set editing-mode vi
+set keymap vi-insert
+"\C-l": clear-screen
+set keymap vi-command
