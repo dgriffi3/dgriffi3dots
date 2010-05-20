@@ -1,15 +1,3 @@
-! set xpdf to use vi-like keybindings
-xpdf*viKeys: true
-xpdf*initialZoom: width
-
-! xterm settings
-! Note borderColor seems undocumented
-XTerm*borderColor: grey
-XTerm*foreground: white
-XTerm*background: black
-XTerm*eightBitInput: false
-XTerm*allowSendEvents: true
-
 ! urxvt settings
 urxvt*borderColor: grey
 urxvt*foreground: white
