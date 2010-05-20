@@ -44,6 +44,7 @@ my %links = (
     xmobarrc => '.xmobarrc',
     xmodmap => '.xmodmap',
     xmonad => '.xmonad',
+    Xdefaults => '.Xdefaults',
     Xresources => '.Xresources',
     zsh => '.zsh',
     zshrc => '.zshrc',
