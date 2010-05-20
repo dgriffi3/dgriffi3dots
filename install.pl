@@ -40,6 +40,7 @@ my %links = (
     commonsh => '.commonsh',
     inputrc => '.inputrc',
     vimperatorrc => '.vimperatorrc',
+    vimrc => '.vimrc',
     xinitrc => '.xinitrc',
     xsession => '.xsession',
     xmobarrc => '.xmobarrc',
