@@ -54,7 +54,7 @@ main = do
                           , ppExtras = [ battery ]
                           , ppTitle  = xmobarColor "#8AE234" "" . filter (\c -> ord c < 128) ---
                           }
-           , startupHook = setWMName "LG3D"
+           , startupHook = setWMName "LG3D" -- Hack to get Java to play nicely with xmonad
            , terminal = "urxvtcd"
            , modMask = mod4Mask
            }
@@ -64,7 +64,6 @@ main = do
            , ("M-a", windowPromptBring defaultXPConfig { position = Top })
            , ("M-x", sendMessage ToggleStruts)
            , ("M-S-l", spawn "~/bin/lock")
---           , ("M-e", spawn "emacsclient -c")
            , ("M-f", spawn "firefox")
            , ("M-r", spawn "urxvtcd")
            , ("M-S-t", spawn "trackpad-toggle") -- Turn on/off trackpad
