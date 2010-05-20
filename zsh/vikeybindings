@@ -1,0 +1,8 @@
+# Set the zsh vi-keys as a base
+bindkey -v
+# These set v in command mode to be as though bash
+# Specifically it calls EDITOR on the command line
+# This should be fixed to exec after the file is closed
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -a 'v' edit-command-line
