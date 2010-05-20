@@ -1,5 +1,5 @@
 ! urxvt settings
-urxvt*borderColor: grey
+urxvt*borderColor: black
 urxvt*foreground: white
 urxvt*background: black
 urxvt*eightBitInput: false

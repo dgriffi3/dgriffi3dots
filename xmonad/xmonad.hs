@@ -15,6 +15,8 @@ import XMonad.Layout.ResizableTile -- resize non-master windows too
 import Data.Char
 import Data.List
 
+import XMonad.Layout.NoBorders
+
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeysP)
 import XMonad.Util.Scratchpad
@@ -48,7 +50,7 @@ main = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ defaultConfig
            { manageHook = myManageHook <+> manageHook defaultConfig
-           , layoutHook = avoidStruts  $  smartBorders $ myLayoutHook
+           , layoutHook = avoidStruts  $  noBorders $ myLayoutHook
            , logHook    = dynamicLogWithPP $ xmobarPP
                           { ppOutput = hPutStrLn xmproc
                           , ppExtras = [ battery ]
@@ -63,7 +65,7 @@ main = do
            , ("M-S-a", windowPromptGoto defaultXPConfig { position = Top })
            , ("M-a", windowPromptBring defaultXPConfig { position = Top })
            , ("M-x", sendMessage ToggleStruts)
-           , ("M-S-l", spawn "~/bin/lock")
+           , ("M-S-l", spawn "xlock")
            , ("M-f", spawn "firefox")
            , ("M-r", spawn "urxvtcd")
            , ("M-S-t", spawn "trackpad-toggle") -- Turn on/off trackpad
