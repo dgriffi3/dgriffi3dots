@@ -55,7 +55,7 @@ main = do
                           , ppTitle  = xmobarColor "#8AE234" "" . filter (\c -> ord c < 128) ---
                           }
            , startupHook = setWMName "LG3D"
-           , terminal = "urxvtc"
+           , terminal = "urxvtcd"
            , modMask = mod4Mask
            }
            `additionalKeysP`
@@ -66,7 +66,7 @@ main = do
            , ("M-S-l", spawn "~/bin/lock")
 --           , ("M-e", spawn "emacsclient -c")
            , ("M-f", spawn "firefox")
-           , ("M-r", spawn "urxvtc")
+           , ("M-r", spawn "urxvtcd")
            , ("M-S-t", spawn "trackpad-toggle") -- Turn on/off trackpad
-           , ("M-g", scratchpadSpawnActionTerminal "urxvtc")
+           , ("M-g", scratchpadSpawnActionTerminal "urxvtcd")
            ]
