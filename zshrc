@@ -56,18 +56,5 @@ fi
 
 
 # Mine: 
-  # Path
-  export PATH="$PATH:$HOME/maude-linux/"
-
-  # Editors for Revision Control
-  export SVN_EDITOR="emacsclient -c -nw"
-  export GIT_EDITOR="emacsclient -c -nw"
-
-  # Fix much of xmonad's java problems
-  export  _JAVA_AWT_WM_NONREPARENTING=1
-
   # Needed by javamoptestsuite
-  export INSTALL_PATH=/home/ilseman2/runtime-verification
-
-  # Have qemu use esd, which works the best from what I've tried
-  export QEMU_AUDIO_DRV=esd
+  export INSTALL_PATH=${HOME}/runtime-verification
