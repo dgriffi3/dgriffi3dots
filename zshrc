@@ -53,8 +53,3 @@ if [ -d "${HOME}/.zsh" ] ; then
 		. "${HOME}/.zsh/${file}"
 	done
 fi
-
-
-# Mine: 
-  # Needed by javamoptestsuite
-  export INSTALL_PATH=${HOME}/runtime-verification
