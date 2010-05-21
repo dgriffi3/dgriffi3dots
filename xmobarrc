@@ -12,5 +12,5 @@ Config { font = "-*-terminus-*-r-*-*-12-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%date% %multicpu% %memory% %battery% %KCMI%"
+       , template = "%date% %multicpu% %memory% %battery% %KCMI%}{%StdinReader%"
        }
