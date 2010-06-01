@@ -8,9 +8,8 @@ Config { font = "-*-terminus-*-r-*-*-12-*-*-*-*-*-*-*"
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Date "%a %b %_d %R" "date" 30
 		    , Run Battery [] 120
-                    , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%date% %multicpu% %memory% %battery% %KCMI%}{%StdinReader%"
+       , template = "%date% %multicpu% %memory% %battery% %KCMI%"
        }

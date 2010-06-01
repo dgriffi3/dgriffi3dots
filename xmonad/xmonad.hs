@@ -52,10 +52,6 @@ main = do
            { manageHook = myManageHook <+> manageHook defaultConfig
            , layoutHook = avoidStruts  $  noBorders $ myLayoutHook
            , logHook    = dynamicLogWithPP $ xmobarPP
-                          { ppOutput = hPutStrLn xmproc
-                          , ppExtras = [ battery ]
-                          , ppTitle  = xmobarColor "#8AE234" "" . filter (\c -> ord c < 128) ---
-                          }
            , startupHook = setWMName "LG3D" -- Hack to get Java to play nicely with xmonad
            , terminal = "urxvtcd"
            , modMask = mod4Mask
