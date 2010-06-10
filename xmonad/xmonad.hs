@@ -58,13 +58,7 @@ main = do
            , focusFollowsMouse = False
            }
            `additionalKeysP`
-           [ ("M-p", shellPrompt defaultXPConfig { position = Top })
-           , ("M-S-a", windowPromptGoto defaultXPConfig { position = Top })
-           , ("M-a", windowPromptBring defaultXPConfig { position = Top })
-           , ("M-x", sendMessage ToggleStruts)
-           , ("M-S-l", spawn "xlock")
-           , ("M-f", spawn "firefox")
-           , ("M-r", spawn "urxvtcd")
-           , ("M-S-t", spawn "trackpad-toggle") -- Turn on/off trackpad
+           [ ("M-f", spawn "firefox")
+           , ("M-l", spawn "xlock")
            , ("M-g", scratchpadSpawnActionTerminal "urxvtcd")
            ]
