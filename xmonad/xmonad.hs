@@ -55,6 +55,7 @@ main = do
            , startupHook = setWMName "LG3D" -- Hack to get Java to play nicely with xmonad
            , terminal = "urxvtcd"
            , modMask = mod4Mask
+           , focusFollowsMouse = False
            }
            `additionalKeysP`
            [ ("M-p", shellPrompt defaultXPConfig { position = Top })
