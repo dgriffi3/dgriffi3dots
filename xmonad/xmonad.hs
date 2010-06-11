@@ -60,5 +60,6 @@ main = do
            `additionalKeysP`
            [ ("M-f", spawn "firefox")
            , ("M-l", spawn "xlock")
+           , ("M-p", shellPrompt defaultXPConfig { position = Bottom })
            , ("M-g", scratchpadSpawnActionTerminal "urxvtcd")
            ]
