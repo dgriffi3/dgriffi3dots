@@ -71,6 +71,3 @@ case `uname -s` in
 		done
 	;;
 esac
-
-
-( command -v time >/dev/null 2>&1 ) && alias time='command time'
