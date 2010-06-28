@@ -1,4 +1,5 @@
 " Turn on spelling
+set spell
 
 " List possible completions in the statusline
 set wildmenu
@@ -139,20 +140,6 @@ fu! s:SetComplType ()
       let g:complType=["\<C-X>\<C-O>","\<C-P>"]
    else
       let g:complType=["\<C-P>"]
-   endif
-endf
-
-" Turn on spelling for LaTeX and mail
-if has('autocmd')
-   autocmd BufEnter * call s:turnOnSpelling()
-endif
-fu! s:turnOnSpelling ()
-   if has("spell")
-      if (&filetype == "tex" || &filetype == "mail" || &filetype == "svn")
-         set spell
-      else
-         set nospell
-      endif
    endif
 endf
 
